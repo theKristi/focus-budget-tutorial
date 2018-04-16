@@ -36,7 +36,7 @@
 	"@BudgetManagerModels":"./services/BudgetManagerAPI/app/models",
 	"@BudgetManagerAPI":"./services/BudgetManagerAPI/config/app.js",
 	"@config":"./services/BudgetManagerAPI/config/index.js"
-  }
+  },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",

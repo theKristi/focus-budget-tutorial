@@ -1,5 +1,5 @@
 const PassportJWT = require('passport-jwt'),
-	  ExtractJWT = PassportJWT.ExtractJWT,
+	  ExtractJWT = PassportJWT.ExtractJwt,
 	  Strategy = PassportJWT.Strategy,
 	  config = require('./index.js'),
 	  models = require('@BudgetManager/app/setup');
@@ -8,15 +8,15 @@ const PassportJWT = require('passport-jwt'),
 		const User = models.User;
 
 		const parameters = {
-			secretKey: config.secret;
+			secretOrKey: config.secret,
 			jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken()
 		};
 		
-		passport.use(new Strategy(parameters, (payload, done)=>{
-			User.findOne({id:payload.id},(error,user)=> {
-				if(error) return done(error, false);
-				if(user) done(null, user);
-				else done(null, false);
-			});
-		}));
-	  }
+		passport.use(new Strategy(parameters, (payload, done) => {
+    User.findOne({ id: payload.id }, (error, user) => {
+      if (error) return done(error, false);
+      if (user) done(null, user);
+      else done(null, false);
+    });
+  }));
+}
