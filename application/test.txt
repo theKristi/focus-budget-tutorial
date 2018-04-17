@@ -1,5 +1,0 @@
-x Can create new Insurance
-x Create Throws error when primary name exixts
-x Edit throws error when name is edited to an already existing primary name
-x Can Create with existing aka
-x Can Edit to include existing aka 

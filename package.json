@@ -30,12 +30,12 @@
     "url": "https://github.com/theKristi/focus-budget-tutorial/issues"
   },
   "homepage": "https://github.com/theKristi/focus-budget-tutorial#readme",
-  "_moduleAliases":{
-	"@root":".",
-	"@BudgetManager":"./services/BudgetManagerAPI",
-	"@BudgetManagerModels":"./services/BudgetManagerAPI/app/models",
-	"@BudgetManagerAPI":"./services/BudgetManagerAPI/config/app.js",
-	"@config":"./services/BudgetManagerAPI/config/index.js"
+  "_moduleAliases": {
+    "@root": ".",
+    "@BudgetManager": "./services/BudgetManagerAPI",
+    "@BudgetManagerModels": "./services/BudgetManagerAPI/app/models",
+    "@BudgetManagerAPI": "./services/BudgetManagerAPI/config/app.js",
+    "@config": "./services/BudgetManagerAPI/config/index.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -45,10 +45,9 @@
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.1",
     "module-alias": "^2.0.6",
-    "mongoose": "^5.0.14",
+    "mongoose": "^5.0.15",
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0"
   }
-  
 }
