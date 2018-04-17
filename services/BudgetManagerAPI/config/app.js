@@ -18,3 +18,11 @@ const express = require('express'),
 	  app.use(passport.initialize());
 	  
 	  app.set('budgetsecret', config.secret);
+	  
+	  consign({cwd: 'services'})
+	  .include('BudgetManagerAPI/app/setup')
+	  .then('BudgetManagerAPI/app/api')
+	  .then('BudgetManagerAPI/app/routes')
+	  .into(app);
+	  
+	  module.exports=app;
