@@ -1,9 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import * as Auth from '@/components/pages/Authentication'
+
 // Pages
 import Home from '@/components/pages/Home'
 import Authentication from '@/components/pages/Authentication/Authentication'
+
+// Global Components
+import Header from '@/components/Header'
+import BudgetList from '@/components/Budget/BudgetList'
+// Register compnents
+Vue.component('app-header', Header)
+Vue.component('budget-list', BudgetList)
+
 Vue.use(Router)
 
 const router = new Router({
@@ -11,14 +20,19 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home,
+      components: {
+        default: Home,
+        header: Header,
+        budgetList: BudgetList
+      },
       meta: {
         requiredAuth: true
       }
     },
     {
       path: '/login',
-      name: 'Authentication'
+      name: 'Authentication',
+      component: Authentication
     }
   ]
 })

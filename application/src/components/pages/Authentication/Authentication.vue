@@ -97,5 +97,17 @@ export default{
         min-width: 272px;
         min-height: 320px;
         animation: slideInFormat 1s forwards ease;
+        label, input, .icon{
+            color: #29b6f6!important;
+        }
+        .input-group__details {
+            &:before {
+                background-color: $border-color-input !important
+            }
+        }
+    }
+    .l-signup {
+        @extend .l-auth;
+        animation: slideInFromLeft 1s forwards ease;
     }
 </style>
