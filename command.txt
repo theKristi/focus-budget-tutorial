@@ -1,3 +1,3 @@
 npm i --save express body-parser mongoose consign cors bcrypt-nodejs jsonwebtoken morgan passport passport-jwt module-alias
 
--searach express on tutorial page
+-search building home component 
