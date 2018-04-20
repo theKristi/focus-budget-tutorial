@@ -10,7 +10,7 @@
                           color="light-blue lighten-1">
             </v-text-field>
             <v-text-field label="password"
-                          v-model="credential.password"
+                          v-model="credentials.password"
                           prepend-icon="lock"
                           :rules="rules"
                           :append-icon="loginPasswordVisible?'visibility':'visibility_off'"
@@ -45,7 +45,7 @@
             </v-text-field>
         </v-form>
     </div>
-    <v-snackbar timeout="6000"
+    <v-snackbar
                 bottom="bottom"
                 color="red lighten-1"
                 v-model="snackbar">

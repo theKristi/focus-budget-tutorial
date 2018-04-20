@@ -1,6 +1,6 @@
 <template>
 <section class="1-budget-body">
-    <div class="md-budget" v-if="budget != null" v-for="budget in budgets">
+    <div class="md-budget" v-if="budget != null" v-for="budget in budgets" :key="budget.client_id">
         <div class="md-budget-info white--text">{{ budget.client }}</div>
         <div class="md-budget-info white--text">{{ budget.title }}</div>
         <div class="md-budget-info white--text">{{ budget.state }}</div>
