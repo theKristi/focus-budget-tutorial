@@ -4,6 +4,7 @@ module.exports=(app)=>{
 	
 	app.route('/')
 		.get((req,res)=>res.send('Budget Manager API'));
+    
 	app.route('/api/v1/auth')
 		.post(api.login(models.User));
 }

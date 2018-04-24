@@ -4,7 +4,7 @@ const PassportJWT = require('passport-jwt'),
 	  config = require('./index.js'),
 	  models = require('@BudgetManager/app/setup');
 	  
-	  module.exports=(passport)=>{
+	  module.exports= (passport) => {
 		const User = models.User;
 
 		const parameters = {
@@ -13,10 +13,10 @@ const PassportJWT = require('passport-jwt'),
 		};
 		
 		passport.use(new Strategy(parameters, (payload, done) => {
-    User.findOne({ id: payload.id }, (error, user) => {
-      if (error) return done(error, false);
-      if (user) done(null, user);
-      else done(null, false);
+          User.findOne({ id: payload.id }, (error, user) => {
+            if (error) return done(error, false);
+            if (user) done(null, user);
+            else done(null, false);
     });
   }));
 }
