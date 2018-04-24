@@ -12,7 +12,7 @@ const express = require('express'),
 	  database = require('./database')(mongoose, config);
 	  
 	  app.use(express.static('.'));
-	  app.use(bodyParser.urlencoded({extended:true}));
+	  app.use(bodyParser.urlencoded({extended: true}));
 	  app.use(bodyParser.json());
 	  app.use(cors());
 	  app.use(passport.initialize());
@@ -25,4 +25,4 @@ const express = require('express'),
 	  .then('BudgetManagerAPI/app/routes')
 	  .into(app);
 	  
-	  module.exports=app;
+	  module.exports = app;
