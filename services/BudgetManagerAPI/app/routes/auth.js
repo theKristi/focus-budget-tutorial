@@ -1,5 +1,5 @@
 const models= require('@BudgetManager/app/setup');
-module.exports=(app)=>{
+module.exports = (app) => {
 	const api=app.BudgetManagerAPI.app.api.auth;
 	
 	app.route('/')

@@ -2,7 +2,7 @@
 <div>
     <h3>Hi! This is our app's home</h3>
     <ul>
-        <li v-if="users != null" v-for="user in users">
+        <li v-if="users != null" v-for="user in users" :key=user._id>
         {{ user.username }}
         </li>
     </ul>
@@ -12,7 +12,7 @@
 import Axios from 'axios'
 import Authentication from '@/components/pages/Authentication'
 const BudgetManagerAPI = `http://${window.location.hostname}:3001`
-export default{
+export default {
   data () {
     return {
       users: []

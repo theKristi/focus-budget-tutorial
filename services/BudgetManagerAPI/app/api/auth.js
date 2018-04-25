@@ -5,6 +5,7 @@ const mongoose = require('mongoose'),
 const api = {};
 
 api.login = (User) => (req, res) => {
+ console.log("getting user")
   User.findOne( {username: req.body.username}, (error,user) => {
     if(error) throw error;
     if(!user) res.status(401).send({success: false, message: 'Authentication failed. User not found.'});

@@ -5,7 +5,6 @@ import * as Auth from '@/components/pages/Authentication'
 import Home from '@/components/pages/Home'
 import Authentication from '@/components/pages/Authentication/Authentication'
 Vue.use(Router)
-
 const router = new Router({
   routes: [
     {
@@ -18,13 +17,13 @@ const router = new Router({
     },
     {
       path: '/login',
-      name: 'Authentication'
+      name: 'Authentication',
+      component: Authentication
     }
   ]
 })
-
 router.beforeEach((to, from, next) => {
-  if (to.meta.requredAuth) {
+  if (to.meta.requiredAuth) {
     if (Auth.default.user.authenticated) {
       next()
     } else {
@@ -34,13 +33,4 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
-export default new Router({
-  routes: [
-    {
-      path: '/login',
-      name: 'Authentication',
-      component: Authentication
-    }
-  ]
-})
+export default router
