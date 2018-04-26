@@ -17,14 +17,14 @@ api.store = (User, Client, Token) => (req, res) => {
  }else return res.status(403).send({succes: false, message: 'Unauthorized' });    
 }
 
-api.getAll = (User, Clentm Token) => (req, res) => {
+api.getAll = (User, Clent, Token) => (req, res) => {
  if(Token){
    Client.find({user_id: req.query.user_id},(error, client) =>{
        if(error) return res.status(400).json(error);
        res.status(200).json(client);
        return true;
    })
- }else return res.status(403).send({success: false, message 'Unauthorized'}) 
+ }else return res.status(403).send({success: false, message: 'Unauthorized'}) 
 
 }
 

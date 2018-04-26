@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema({
   name: {
     type: String,
-    required: true;
+    required: true
   },
   email: {
     type: String,
-    required: true;
+    required: true
   },
   phone: {
     type: String,
-    required: true;  
+    required: true  
   },
   user_id:{
     type: mongoose.Schema.Types.ObjectId,

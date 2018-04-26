@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const api = {};
 
-api.store = (User, Budget,Client, Token) => (req, res) => {
+api.store = (User, Budget, Client, Token) => (req, res) => {
     if(Token) {
         
         Client.findOne({_id: req.body.client_id}, (error, client) => {
@@ -29,7 +29,7 @@ api.store = (User, Budget,Client, Token) => (req, res) => {
     } else return res.status(403).json({success: false, message: 'Unauthorized'});
 
 }
-api.getAll(User, Budget, Token) => (req, res) => {
+api.getAll = (User, Budget, Token) => (req, res) => {
     if(Token) {
       Budget.find({client_id: req.query.client_id}, (error, budget) => {
         if(error) return res.status(400).json(error);
@@ -38,5 +38,13 @@ api.getAll(User, Budget, Token) => (req, res) => {
       })
     } else return res.status(403).send({ succes: false, message: 'Unathorized'});
 }
-
+api.getAllFromClient = (User, Budget, Token) => (req, res) => {
+  if(Token) {
+      Budget.find({ client_id: req.query.client_id}, (error, budget) => {
+        if(error) return res.status(400).json(error);
+        res.status(200).json(budget);
+        return true;
+    })
+  } else return res.status(403).send({success: false, message: 'Unauthorized'});
+}
 module.exports = api;
