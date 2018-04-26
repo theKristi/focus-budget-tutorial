@@ -14,7 +14,6 @@ Vue.component('app-header', Header)
 Vue.component('budget-list', BudgetList)
 
 Vue.use(Router)
-
 const router = new Router({
   routes: [
     {
@@ -36,9 +35,8 @@ const router = new Router({
     }
   ]
 })
-
 router.beforeEach((to, from, next) => {
-  if (to.meta.requredAuth) {
+  if (to.meta.requiredAuth) {
     if (Auth.default.user.authenticated) {
       next()
     } else {
@@ -48,13 +46,4 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
-export default new Router({
-  routes: [
-    {
-      path: '/login',
-      name: 'Authentication',
-      component: Authentication
-    }
-  ]
-})
+export default router
